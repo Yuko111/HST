@@ -1,0 +1,55 @@
+// MAX HEALTH RATE = 220 - AGE
+
+// TARGET HEALTH RATE =  MAX HEALTH RATE * 0.7
+
+/*
+	VKİ = Ağırlık (Kg) / boyun metre cinsinden karesi
+
+	100 kilo ve 1.80 boyundaki biri için hesaplamayı aşağıdaki gibi yapabilirsiniz.
+
+	1.8 x 1.8 = 3.24
+
+	100 / 3.24 = 30.8
+
+	VKİ = 30.8
+
+*/
+
+
+#include "HealthProfile.h"
+#include <iostream>
+
+int main()
+{
+	std::string name = "";
+	std::string surname = "";
+	std::string cins = "";
+	int ay = NULL; int gun = NULL; int yil = NULL;
+	float boy = NULL; int kilo = NULL;
+
+	std::cout << "Adinizi Giriniz:";
+	std::cin >> name;
+	std::cout << std::endl;
+	std::cout << "Soyadinizi Giriniz:";
+	std::cin >> surname;
+	std::cout << std::endl;
+	std::cout << "Cinsiyetinizi Yaziniz:";
+	std::cin >> cins;
+	std::cout << std::endl;
+	std::cout << "Dogum Tarihinizi Giriniz(AY - GUN - YİL):";
+	std::cin >> ay >> gun >> yil;
+	std::cout << std::endl;
+	std::cout << "Boyunuzu Giriniz:";
+	std::cin >> boy;
+	std::cout << std::endl;
+	std::cout << "Kilonuzu Giriniz:";
+	std::cin >> kilo;
+	std::cout << std::endl;
+	system("cls");
+
+	HealthProfile Usr(name, surname, cins, ay, gun, yil, boy, kilo);
+	Usr.showInfos();
+	Usr.~HealthProfile();
+
+
+}
